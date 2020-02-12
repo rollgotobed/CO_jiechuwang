@@ -4,21 +4,26 @@
 #include <iostream>
 
 int shuchu();
-double zhijiaosanjianxing(double a, double b, double c);
+float zhijiaosanjianxing(float a, float b, float c);
 
 
 int main()
 {
-    int aaa;
-    double bian;
-    bian = zhijiaosanjianxing(30.5,0,62);
-    if (bian != -1)
+    int i=1,k,h=3;
+    float bian, a[3], lk;
+    while (h--)
     {
-        printf("%0.4f\n", bian);
-    }
-    else 
-    {
-        printf("传参有问题\n");
+        printf("输入第%d条边长\n", i);
+        scanf_s ("%f", &lk);
+        bian = zhijiaosanjianxing(lk, 4, 0);
+        if (bian != -1)
+        {
+            printf("%0.4f\n", bian);
+        }
+        else
+        {
+            printf("传参有问题\n");
+        }
     }
     
 }
@@ -29,13 +34,12 @@ int shuchu()
     return 1;
 }
 
-/* 函数 zhijiaosanjianxing (double a, double b, double c)
+/* 函数 zhijiaosanjianxing (float a, float b, float c)
 
      功能：已知直角三角形两个边长，求第三边，a、b为直角边，c为斜边
 */
-double zhijiaosanjianxing(double a, double b, double c)
+float zhijiaosanjianxing(float a, float b, float c)
 {
-    double k;
     if ((a == 0 && b == 0) || (c == 0 && b == 0) || (a == 0 && c == 0) || (a == 0 && b == 0 && c==0) || (a != 0 && b != 0 && c != 0))
     {
         return -1;
@@ -52,6 +56,7 @@ double zhijiaosanjianxing(double a, double b, double c)
     {
         return sqrt(b * b + a * a);
     }
+    return -1;
 }
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
